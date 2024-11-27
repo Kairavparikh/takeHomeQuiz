@@ -25,8 +25,10 @@ public class Main {
 
             int min = Integer.parseInt(args[0]);
             int max = Integer.parseInt(args[1]);
-            int start = Integer.parseInt(args[2]);
-            int end = Integer.parseInt(args[3]);
+
+            int min1 = Integer.parseInt(args[2]);
+
+            int max1 = Integer.parseInt(args[3]);
 
             Number number = (answer) -> System.out.println("The sum between the min and the max is " + answer);
             AddingLambdaExpression adds = (s, e) -> {
@@ -38,7 +40,7 @@ public class Main {
             };
 
             int result = Number.resultMethod(min, max);
-            int result2 = adds.addInBetweenNums(start, end);
+            int result2 = adds.addInBetweenNums(min1, max1);
             number.printNum(result);
             number.printNum(result2);
 
