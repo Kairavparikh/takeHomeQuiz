@@ -14,25 +14,33 @@ public class Main {
     }
 
     @FunctionalInterface
-    interface addingLamdaExpression {
+    interface AddingLambdaExpression {
         int addInBetweenNums(int start, int end);  
     }
 
     public static void main(String[] args) {
-        Number number = (answer) -> System.out.println("The sum between the min and the max is " + answer);
+        if (args.length < 4) {
+            return;
+        }
 
-        addingLamdaExpression adds = (start, end) -> {
-            int sum = 0;
-            for (int i = start; i <= end; i++) {
-                sum += i;
-            }
-            return sum;
-        };
+            int min = Integer.parseInt(args[0]);
+            int max = Integer.parseInt(args[1]);
+            int start = Integer.parseInt(args[2]);
+            int end = Integer.parseInt(args[3]);
 
-        int result = Number.resultMethod(2, 5);
-        int result2 = adds.addInBetweenNums(2, 6);
-        number.printNum(result);
-        number.printNum(result2);
+            Number number = (answer) -> System.out.println("The sum between the min and the max is " + answer);
+            AddingLambdaExpression adds = (s, e) -> {
+                int sum = 0;
+                for (int i = s; i <= e; i++) {
+                    sum += i;
+                }
+                return sum;
+            };
+
+            int result = Number.resultMethod(min, max);
+            int result2 = adds.addInBetweenNums(start, end);
+            number.printNum(result);
+            number.printNum(result2);
 
     }
 }
