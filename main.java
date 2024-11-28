@@ -13,11 +13,7 @@ public class Main {
         }
     }
 
-    @FunctionalInterface
-    interface AddingLambdaExpression {
-        int addInBetweenNums(int start, int end);  
-    }
-
+   
     public static void main(String[] args) {
         if (args.length < 4) {
             return;
